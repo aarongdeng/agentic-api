@@ -111,6 +111,7 @@ fn test_sequence_numbers_increasing() {
     }
     assert!(last_seq.is_some());
 }
+
 // --- Cassette-driven tests ---
 
 #[test]

@@ -42,6 +42,7 @@ fn test_function_call_args_done() {
         panic!("expected FunctionCallArgsDone payload");
     }
 }
+
 #[test]
 fn test_output_item_added_function_call() {
     let line = r#"data: {"type":"response.output_item.added","item":{"id":"fc_1","type":"function_call","status":"in_progress","name":"get_weather","namespace":"mcp__weather","call_id":"call_1","arguments":""},"output_index":1,"sequence_number":5}"#;
@@ -68,6 +69,7 @@ fn test_output_item_added_function_call() {
         panic!("expected OutputItemAdded payload");
     }
 }
+
 /// Simulate a function-call streaming session.
 #[test]
 fn test_function_call_flow() {
@@ -160,6 +162,7 @@ fn test_real_vllm_function_call_stream() {
         panic!("expected OutputItemDone");
     }
 }
+
 /// Parallel function calls — two tools called in the same response (different `output_index`).
 #[test]
 fn test_parallel_function_calls() {

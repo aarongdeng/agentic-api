@@ -50,6 +50,7 @@ fn test_text_delta() {
         panic!("expected TextDelta payload");
     }
 }
+
 #[test]
 fn test_output_item_done() {
     let line = r#"data: {"type":"response.output_item.done","item":{"id":"msg_1","item_id":"msg_fallback","type":"message","status":"completed","content":[{"type":"output_text","text":"hi"}]},"output_index":0,"sequence_number":9}"#;
@@ -195,6 +196,7 @@ fn test_no_sequence_number() {
     let frame = normalize_sse_line(line).unwrap();
     assert_eq!(frame.sequence_number(), None);
 }
+
 #[test]
 fn test_response_failed() {
     let line = r#"data: {"type":"response.failed","response":{"id":"resp_err","status":"failed","usage":null},"sequence_number":2}"#;
